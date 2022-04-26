@@ -8,6 +8,7 @@
 
 // import classes
 import java.util.*;
+import java.util.Random;
 
 public class Material {
 
@@ -19,6 +20,7 @@ public class Material {
     private Boolean circAvail = true;
     private Date dueDate = null;
     private Integer materialID = 0;
+    Random rand = new Random();
 
     // constructor
     public Material(String title, String author, String subject, Date pubDate){
@@ -26,7 +28,7 @@ public class Material {
         this.author = author;
         this.subject = subject;
         this.pubDate = pubDate;
-        this.materialID = nextInt(10000);
+        this.materialID = rand.nextInt(10000);
     }
 
     // getter methods
@@ -76,7 +78,7 @@ public class Material {
     }
 
     public void setMaterialID(){
-        this.materialID = nextInt(10000);
+        this.materialID = rand.nextInt(10000);
     }
 
     public void setCircAvail(Boolean circAvail){

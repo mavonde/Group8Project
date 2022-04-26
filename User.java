@@ -8,6 +8,7 @@
 
 // import classes
 import java.util.*;
+import java.util.Random;
 
 public class User {
 
@@ -18,6 +19,7 @@ public class User {
     private String phoneNum = null;
     private Integer userID = 0;
     // private UserInventory userInv; // UserInventory class still to be created
+    Random rand = new Random();
 
     // constructor
     public User(String name, String address, String email, String phoneNum){
@@ -25,7 +27,7 @@ public class User {
         this.address = address;
         this.email = email;
         this.phoneNum = phoneNum;
-        this.userID = nextInt(10000);
+        this.userID = rand.nextInt(10000);
     }
 
     // getter methods
@@ -41,7 +43,7 @@ public class User {
         return email;
     }
 
-    public Date getPhoneNum(){
+    public String getPhoneNum(){
         return phoneNum;
     }
 
@@ -62,11 +64,11 @@ public class User {
         this.email = email;
     }
 
-    public void setPhoneNum(Date phoneNum){
+    public void setPhoneNum(String phoneNum){
         this.phoneNum = phoneNum;
     }
 
     public void setUserID(){
-        this.userID = nextInt(10000);
+        this.userID = rand.nextInt(10000);
     }
 }
